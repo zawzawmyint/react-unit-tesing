@@ -3,6 +3,7 @@ name: React Unit Tests
 on:
   push:
     branches: main
+  workflow_dispatch:
 
 jobs:
   run-all-test:
