@@ -1,0 +1,23 @@
+name: React Unit Tests
+
+on:
+  push:
+    branches: main
+
+jobs:
+  run-all-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js with Node 21
+        uses: actions/setup-node@v2
+        with:
+          node-version: "21"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
